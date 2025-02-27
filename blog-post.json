@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "title": "My Journey in Web Development",
+        "date": "March 1, 2025",
+        "content": "Web development has been a passion of mine for years. I started from scratch, learning HTML, CSS, and JavaScript..."
+    },
+    {
+        "id": 2,
+        "title": "Why Learning JavaScript Changed My Career",
+        "date": "March 5, 2025",
+        "content": "JavaScript was a turning point in my development journey, making my websites interactive and dynamic..."
+    }
+]

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="blog.html">← Back to Blog</a>
+    </header>
+
+    <section id="blog-content"></section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const params = new URLSearchParams(window.location.search);
+            const postId = params.get("id");
+
+            fetch("blog-posts.json")
+                .then(response => response.json())
+                .then(posts => {
+                    const post = posts.find(p => p.id == postId);
+                    if (post) {
+                        document.getElementById("blog-content").innerHTML = `
+                            <h1>${post.title}</h1>
+                            <p><small>${post.date}</small></p>
+                            <p>${post.content}</p>
+                        `;
+                    } else {
+                        document.getElementById("blog-content").innerHTML = "<p>Post not found.</p>";
+                    }
+                });
+        });
+    </script>
+
+</body>
+</html>
